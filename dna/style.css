@@ -1,0 +1,78 @@
+.dna {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  background: rgb(138, 138, 228);
+  align-items: center;
+  justify-content: center;
+}
+
+.pair__container {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  justify-content: space-between;
+  transform: rotateZ(0deg);
+}
+
+:root {
+  --dna-delay: var(--i);
+}
+
+.pair__container > li {
+  animation:
+    rotation
+    linear
+    1.3s
+    calc(var(--i) * 0.05s)
+    /* alternate */
+    infinite;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.pair {
+  display: inline-block;
+  width: 300px;
+  height: .5rem;
+  position: relative;
+}
+
+.pair:nth-child(odd) {
+  background: linear-gradient(90deg, #6e8519 50%, #187a8c 50%);
+}
+
+.pair:nth-child(even) {
+  background: linear-gradient(90deg, #8c1c82 50%, #df5a0b 50%);
+}
+
+.pair span::before {
+  content: "";
+  background: #e2c196;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: -100%;
+  left: -1%;
+  /* transform: translate(50%, 50%); */
+}
+
+.pair span::after {
+  content: "";
+  background: #e2c196;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -100%;
+  right: -1%;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotateY(360deg)
+    /* transform: scaleX(0) */
+  }
+}
