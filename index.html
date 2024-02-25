@@ -33,12 +33,27 @@
     </ul>
   </div>
   <div class="interface">
-    <div class="speed__buttons">
-      <button class="speed__up" id="up">up</button>
-      <button class="speed__down" id="down">down</button>
+    <div class="controll-panel">
+      <div class="speed__buttons">
+        <button class="speed__up" id="up">up</button>
+        <button class="speed__down" id="down">down</button>
+      </div>
+      <div class="pause">
+        <button class="pause__button" id="pause" onclick="toggle()">
+          <span class="paused">pause</span>
+          <span class="continued">continue</span>
+        </button>
+      </div>
     </div>
-    <div class="pause">
-      <button class="pause__button" id="pause" onclick="toggle()">pause</button>
+    <div class="legend">
+      <div class="pair__op">
+        <span>Guanine</span>
+        <span>Cytosine</span>
+      </div>
+      <div class="pair__gb">
+        <span>Adenine</span>
+        <span>Thymine</span>
+      </div>
     </div>
   </div>
 </body>
